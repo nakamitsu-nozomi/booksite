@@ -4,11 +4,19 @@ window .onload=function(){
 $.get("https://www.googleapis.com/books/v1/volumes?q=title:",function(data){
     // dataの中身を表示
     console.log(data);
+   
     
     // dataのitemを取り出す
     var  jsonArray=new Array(data.items) ;
-
-    console.log(jsonArray);
+    var csvArray=new Array();
+    for(i=0;i<jsonArray.length;i++){
+        csvArray[i]= jsonArray[i];
+      
+    }
+    console.log(csvArray[i]);
+   
+      
+   
 
 
 
@@ -27,36 +35,11 @@ $.get("https://www.googleapis.com/books/v1/volumes?q=title:",function(data){
 
     titles.textContent=jsonArray[0].volumeInfo.title;
 
-
+    
    }
 
 
-
-   
-console.log(jsonArray[0].volumeInfo.title);
-
-
-
-
-
-
     });
-
-
-
-
-
-
-
-
-
-
-
-    
-  
-    
-
-   
 
 
 

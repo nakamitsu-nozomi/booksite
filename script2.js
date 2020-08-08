@@ -25,26 +25,34 @@ window.onload=function(){
        
         // 表
      var output=document.getElementById("output");
-     var table =document.createElement("table") ;
+     var ol =document.createElement("ol") ;
         //  table.border="1px";
-     table.style.textAlign="center";
+     ol.style.textAlign="center";
     
      
 
 
      
-     for(var n=0;n<csvArray.length;n++){
-        var tr=document.createElement("tr");
-        for(var x=0;x<csvArray[n].length;x++){
-            var td=document.createElement("td");
-            td.textContent=csvArray[n][x];
-            tr.appendChild(td);
-            table.appendChild(tr);
-            
-        }
-     
+     for(var n=0;n<10;n++){
+        var li=document.createElement("ol") ;
+        var title=document.createElement("h2") ;
+        var img=document.createElement("img") ;
+        var category=document.createElement("div") ;
+        var publishdate=document.createElement("div") ;
+    
+        title.textContent=csvArray[n].title;
+        img.src=csvArray[n].imageLinks.thumbnail;
+        category.textContent="本の種類："+csvArray[n].categories;
+        publishdate.textContent="出版年："+csvArray[n].publishedDate
+   
+        li.appendChild(title);
+        li.appendChild(img);
+        li.appendChild(category);
+        li.appendChild(publishdate);
+        ol.appendChild(li);
+        output.appendChild(ol);
      }
-     output.appendChild(table);
+     
      
     });
     

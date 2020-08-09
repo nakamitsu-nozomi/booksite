@@ -1,11 +1,9 @@
+
 #output li{ 
  list-style: none;
  border: solid 1px black;
  margin: 10px;
  width: 18%;
-
-
-
 }
 #output ul{
    text-align: center; 
@@ -14,5 +12,25 @@
    display: flex;
    flex-wrap:wrap;
    justify-content:center;
-  
 }
+#textbox{
+  width: 450px;
+}
+
+.imputlist{
+   text-align: center;
+}
+#inputlist{
+   text-align: center;
+   background-color: bisque;
+   display: flex;
+   flex-wrap:wrap;
+   width: 500px;
+}
+#inputlist label{
+  width: 25%;
+  margin: 0;
+  padding: 0;
+}
+
+  

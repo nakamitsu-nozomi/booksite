@@ -22,6 +22,10 @@ window.onload=function(){
     var ul =document.createElement("ul") ;  
     var arrangement=document.getElementById("inputlist");
     var b1=arrangement.b1.value;
+    var sort=document.getElementById("sort");
+    var r1=sort.value;
+  
+
  
     // 検索履歴を削除 
     while (output.firstChild) {
@@ -39,11 +43,12 @@ window.onload=function(){
        title.textContent=csvArray[n].title;
        try {
         img.src=csvArray[n].imageLinks.thumbnail;
-        category.textContent="本の種類："+csvArray[n].categories;
+        // category.textContent="本の種類："+csvArray[n].categories;
         } catch (error) {
         
         }
-        publishdate.textContent="出版年："+csvArray[n].publishedDate;
+        Undefind();
+        // publishdate.textContent="出版年："+csvArray[n].publishedDate;
   
        li.appendChild(title);
        li.appendChild(img);
@@ -52,6 +57,7 @@ window.onload=function(){
        ul.appendChild(li);
        output.appendChild(ul);
     }
+
 //  本の種類で分類する
     var business_books=csvArray.filter(function(item,index){
      if(item.categories=="Business & Economics")return true; 
@@ -61,37 +67,26 @@ window.onload=function(){
          console.log(business_books.title);
       }
 
+// undefindのとき表示しない
+      function Undefind(){
+          if(csvArray[n].categories==undefined){
+            category.textContent=" ";
+          }else{
+            category.textContent="本の種類："+csvArray[n].categories;
+          }
+          if(csvArray[n].publishedDate==undefined){
+            publishdate.textContent=" ";
+          }else{
+            publishdate.textContent="出版年："+csvArray[n].publishedDate;
+          }
+          
+      }
 
 
 
-        
+
     
-
-
-
-  
-   
-
-   
-  
-
-
-
-
 
  });
-    
-
-        
-       
-
-    
-
-
-
-
 });
-
-
-
 };

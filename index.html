@@ -14,16 +14,25 @@
     <button id="search">検索</button>
   </div>  
   <!-- 本の種類毎検索 -->
+  <div class="inputlist">
+  <p>本の種類から探す</p>
   <form id="inputlist">
-    <input type="radio" name="b1" value="1" checked> 全て
-    <input type="radio" name="b1" value="2"> ビジネス本
-    <input type="radio" name="b1" value="3"> 小説
-    <input type="radio" name="b1" value="4"> マンガ
-    <input type="radio" name="b1" value="5"> 雑誌
-    <input type="radio" name="b1" value="6"> 子供向け
-    <input type="radio" name="b1" value="7"> その他
+    <label><input type="checkbox" name="b1" value="1" checked > 全て</label>
+    <label><input type="checkbox" name="b1" value="2" > ビジネス本</label>
+    <label><input type="checkbox" name="b1" value="3" > 小説</label>
+    <label><input type="checkbox" name="b1" value="4" > マンガ</label>
+    <label><input type="checkbox" name="b1" value="5" > 雑誌</label>
+    <label><input type="checkbox" name="b1" value="6" > 子供向け</label>
+    <label><input type="checkbox" name="b1" value="7" > その他</label>
   </form>
+ </div>
+ <div >
+   <!--新着順に並べる-  -->
 
+  <select name="sort" id="sort">
+    <option value="0">新着順</option>
+  </select>
+ </div>
 
   <div id="output"></div>
   

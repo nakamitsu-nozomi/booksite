@@ -1,0 +1,29 @@
+#output {
+    width: 70%;
+}
+
+.book-list {
+    list-style: none;
+}
+
+.book-item {
+    width: 100%;
+    border: solid 1px black;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.book-image {
+    margin: 7px;
+    width: 15%;
+    display: inline-block;
+}
+
+.clear {
+    clear: both;
+}
+
+.book-description {
+    vertical-align: top;
+    display: inline-block;
+} 

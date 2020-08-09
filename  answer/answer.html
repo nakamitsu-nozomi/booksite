@@ -1,0 +1,39 @@
+
+<head>
+    <script src="answer.js"></script>
+    <!-- jqueryを読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="answer.css">
+</head>
+
+<body>
+    <!-- 検索ワード -->
+    <h2>本の検索</h2>
+    <form id="inputList">
+        <p>
+            <h3>検索ワードを入力してください。</h3>
+        </p>
+        <p><input name="name" id="subject" value="マンガ"></p>
+        <p>
+            <h3>並べ方</h3>
+        </p>
+        <p>
+
+            <input type="radio" name="r1" value="1" checked> ページ数順
+            <input type="radio" name="r1" value="-1"> 発行年順
+
+        </p>
+        <p>
+            <h3>並べ方</h3>
+        </p>
+        <p>
+            <input type="radio" name="r2" value="1" checked> 昇順
+            <input type="radio" name="r2" value="-1"> 降順
+        </p>
+        <!-- サーチボタン -->
+        <p><button type="button" id="search">search</button></p>
+    </form>
+    <!-- アウトプットタグ -->
+    <div id=output></div>
+
+</body>

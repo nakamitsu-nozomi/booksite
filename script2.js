@@ -16,11 +16,18 @@ window.onload=function(){
         //","（データ毎）で分割して配列にする
         csvArray[i]=tmpArray[i].volumeInfo;
     }
-// 表に１０個データを表示する
-function display(){
+    console.log(csvArray);
+
     var output=document.getElementById("output");
-    var ol =document.createElement("ol") ;  
-    ol.style.textAlign="center";
+    var ul =document.createElement("ul") ;  
+    var arrangement=document.getElementById("inputlist");
+    var b1=arrangement.b1.value;
+ 
+    // 検索履歴を削除 
+    while (output.firstChild) {
+        output.removeChild(output.firstChild);
+    }
+    //検索結果を表示
 
     for(var n=0;n<10;n++){
        var li=document.createElement("li") ;
@@ -30,21 +37,41 @@ function display(){
        var publishdate=document.createElement("div") ;
    
        title.textContent=csvArray[n].title;
-       img.src=csvArray[n].imageLinks.thumbnail;
-       category.textContent="本の種類："+csvArray[n].categories;
-       publishdate.textContent="出版年："+csvArray[n].publishedDate
+       try {
+        img.src=csvArray[n].imageLinks.thumbnail;
+        category.textContent="本の種類："+csvArray[n].categories;
+        } catch (error) {
+        
+        }
+        publishdate.textContent="出版年："+csvArray[n].publishedDate;
   
        li.appendChild(title);
        li.appendChild(img);
        li.appendChild(category);
        li.appendChild(publishdate);
-       ol.appendChild(li);
-       output.appendChild(ol);
-       li.style.border="solid 1px black";
-       
+       ul.appendChild(li);
+       output.appendChild(ul);
     }
-   }
-    display();
+//  本の種類で分類する
+    var business_books=csvArray.filter(function(item,index){
+     if(item.categories=="Business & Economics")return true; 
+    });
+
+    for(var x=0;x<business_books.length;x++){
+         console.log(business_books.title);
+      }
+
+
+
+
+        
+    
+
+
+
+  
+   
+
    
   
 
